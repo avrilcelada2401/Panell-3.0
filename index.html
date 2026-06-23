@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Panel Central de Apps</title>
+    <meta
+      name="description"
+      content="Panel central para abrir apps internas y plataformas de trabajo."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="portal-shell">
+      <header class="portal-header">
+        <a class="brand" href="./" aria-label="Panel Central">
+          <img class="brand__logo" src="assets/playoff-logo.png" alt="Playoff" />
+          <span class="brand__divider" aria-hidden="true"></span>
+          <span>
+            <span class="brand__eyebrow">Panel Central</span>
+            <span class="brand__title">Hub de aplicaciones</span>
+          </span>
+        </a>
+
+        <div class="header-meta" aria-label="Resumen de apps">
+          <span id="total-apps">0 apps</span>
+          <span id="online-apps">0 activas</span>
+          <span id="beta-apps">0 beta</span>
+        </div>
+      </header>
+
+      <section class="overview" aria-labelledby="overview-title">
+        <div class="overview__copy">
+          <p class="section-kicker">Workspace</p>
+          <h1 id="overview-title">Tus plataformas en un solo panel</h1>
+          <p>
+            Accesos directos para herramientas internas, productos en beta y
+            paneles de trabajo diario.
+          </p>
+        </div>
+
+        <div class="overview-stats" aria-label="Estadisticas del panel">
+          <div>
+            <strong id="featured-apps">0</strong>
+            <span>prioritarias</span>
+          </div>
+          <div>
+            <strong id="area-count">0</strong>
+            <span>areas</span>
+          </div>
+          <div>
+            <strong>1</strong>
+            <span>entrada</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="launcher" aria-label="Listado de aplicaciones">
+        <div class="launcher-toolbar">
+          <label class="search-box">
+            <span>Buscar</span>
+            <input
+              id="search"
+              placeholder="Nombre, area o equipo"
+              type="search"
+              autocomplete="off"
+            />
+          </label>
+
+          <div class="category-tabs" id="categories" aria-label="Categorias"></div>
+        </div>
+
+        <div class="apps-grid" id="apps-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <p>No hay apps que coincidan con la busqueda actual.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
